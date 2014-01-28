@@ -6,7 +6,8 @@ public class NetworkingConstants {
 	public static final int FOUR_SECONDS_IN_MILL = 4000;
 	public static final int EIGHT_SECONDS_IN_MILL = 8000;
 
-
+	public static final String GET_ROSTERS_URI = "http://football.myfantasyleague.com/2013/export?TYPE=rosters&L=28390&W=12&JSON=1";
+	
 	public static final String CREATE_USER_URI = "http://192.168.0.82:8080/priceitapi/OAuth/authenticate";
 	public static final String CREATE_MANUFACTURER_URI = "http://192.168.0.82:8080/priceitapi/manufacturer";
 	public static final String CREATE_PRODUCT_URI = "http://192.168.0.82:8080/priceitapi/product";

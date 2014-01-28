@@ -2,16 +2,17 @@ package com.labyrinth.fantasyfootball.fragments;
 
 
 
-import modellists.GetModelList;
-
-
-import com.catalystitservices.priceitdroid.services.networking.SpiceService;
-
-import modellists.ManufacturerList;
 
 
 
 
+
+
+
+
+
+
+import com.labyrinth.fantasyfootball.networking.GetModelList;
 import com.octo.android.robospice.SpiceManager;
 
 import android.app.Fragment;
@@ -51,9 +52,7 @@ public abstract  class SpiceManagerFragment extends Fragment{
     }
 
 
-    public  void doSomeThang(Object result){
-    	
-    }
+    
     
     /** Error codes coming back from a NetworkThreader will call this method, 
      *  passing in their error codes. Pop some toast or something on the error string.
@@ -61,7 +60,7 @@ public abstract  class SpiceManagerFragment extends Fragment{
      * @param errorCode
      */
 
-    public abstract void errorSomeThang(String errorCode);
+    public abstract void networkError(String errorCode);
 
    // protected abstract void performRequest(Object ob);
 
@@ -78,7 +77,7 @@ public abstract  class SpiceManagerFragment extends Fragment{
      * 
      * @param result
      */
-	public abstract void doSomeThang(GetModelList result);
+	public abstract void networkGetSuccess(GetModelList result);
 	
 	/** The network response for a successful POST will call this method. The result is just
 	 *  a generic object for now until we know what we'll be getting from the server after a 
@@ -90,15 +89,8 @@ public abstract  class SpiceManagerFragment extends Fragment{
 
 
 
-	public void refreshPage(){};
+	
 
     
-//    protected abstract class RoboSpiceFragmentRequestListener implements RequestListener<Object> {
-//        @Override
-//        public abstract void onRequestFailure(SpiceException spiceException); 
-//
-//        @Override
-//        public abstract void onRequestSuccess(Object result);
-//    }
 
 }

@@ -7,7 +7,7 @@ import com.octo.android.robospice.request.springandroid.SpringAndroidSpiceReques
 
 import java.io.IOException;
 
-import modellists.GetModelList;
+
 
 /**
  * Created with Intellij with Android, BIZZBY product. See licencing for usage

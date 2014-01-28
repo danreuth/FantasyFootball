@@ -1,22 +1,16 @@
 package com.labyrinth.fantasyfootball;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
 
-public class MainActivity extends Activity {
+import com.labyrinth.fantasyfootball.fragments.DisplayRostersFragment;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
+import android.app.Fragment;
+
+
+public class MainActivity extends AbstractSingleFragmentActivity {
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	protected Fragment createFragment() {
+		return new DisplayRostersFragment();
 	}
 
 }

@@ -2,17 +2,18 @@ package com.labyrinth.fantasyfootball.networking;
 
 
 
-import modellists.GetModelList;
+
 
 import org.springframework.web.client.HttpServerErrorException;
 
 
-import modellists.GetModelList;
+
 
 
 import android.widget.Toast;
 
-import com.catalystitservices.priceitdroid.fragments.SpiceManagerFragment;
+
+import com.labyrinth.fantasyfootball.fragments.SpiceManagerFragment;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
@@ -27,7 +28,7 @@ public class GetRoboSpiceRequestListener implements RequestListener<GetModelList
 		  if(spiceException.getCause() instanceof HttpServerErrorException){
 			  HttpServerErrorException exception = (HttpServerErrorException)spiceException.getCause();
 			  String errorCode = exception.getResponseBodyAsString();
-			  currentContext.errorSomeThang(errorCode);
+			  currentContext.networkError(errorCode);
 		  }
 		  else {
 			  Toast.makeText( currentContext.getActivity(), spiceException.getCause().toString(), Toast.LENGTH_SHORT ).show();
@@ -37,7 +38,7 @@ public class GetRoboSpiceRequestListener implements RequestListener<GetModelList
 	  @Override
 	  public void onRequestSuccess(GetModelList result){
 		  Toast.makeText( currentContext.getActivity(), "Network success", Toast.LENGTH_SHORT ).show();
-		  currentContext.doSomeThang(result);
+		  currentContext.networkGetSuccess(result);
 	  }
 
 
